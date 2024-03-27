@@ -61,25 +61,7 @@ adult_elem.forEach((el) => {
    });
 });
 
-// overLayDiv.forEach((el) => {
-//    el.addEventListener('click', function (event) {
-//       const id = event.target.id;
-//       const elem = document.querySelector(`.${id}_section`);
-//       elem.classList.add('_un_');
-//    });
-// });
 
-// overLayDiv.addEventListener('click', function (event) {
-
-// });
-
-// adult_elem.forEach((el) => {
-//    el.addEventListener('blur', function (event) {
-//       const id = event.target.id;
-//       const elem = document.querySelector(`.${id}_section`);
-//       toggleClassHandler(elem, '_un_');
-//    });
-// });
 
 ec_elm.forEach((el) => {
    el.addEventListener('click', function (event) {
@@ -92,13 +74,7 @@ ec_elm.forEach((el) => {
    });
 });
 
-// ec_elm.forEach((el) => {
-//    el.addEventListener('focus', function (event) {
-//       const id = event.target.id;
-//       const elem = document.querySelector(`.${id}_section`);
-//       toggleClassHandler(elem, '_un_');
-//    });
-// });
+
 
 toggleDivElem.addEventListener('click', function () {
    toggleClassHandler(searchDivElem, '_show_tabs');
@@ -171,7 +147,7 @@ function app() {
       },
       formatDateForDisplay(date) {
          let formattedDay = DAYS[date.getDay()];
-         let formattedDate = ('0' + date.getDate()).slice(-2); // appends 0 (zero) in single digit date
+         let formattedDate = ('0' + date.getDate()).slice(-2); 
          let formattedMonth = MONTH_NAMES[date.getMonth()];
          let formattedMonthShortName = MONTH_SHORT_NAMES[date.getMonth()];
          let formattedMonthInNumber = (
@@ -180,13 +156,13 @@ function app() {
          ).slice(-2);
          let formattedYear = date.getFullYear();
          if (this.dateFormat === 'DD-MM-YYYY') {
-            return `${formattedDate}-${formattedMonthInNumber}-${formattedYear}`; // 02-04-2021
+            return `${formattedDate}-${formattedMonthInNumber}-${formattedYear}`; 
          }
          if (this.dateFormat === 'YYYY-MM-DD') {
-            return `${formattedYear}-${formattedMonthInNumber}-${formattedDate}`; // 2021-04-02
+            return `${formattedYear}-${formattedMonthInNumber}-${formattedDate}`; 
          }
          if (this.dateFormat === 'D d M, Y') {
-            return `${formattedDay} ${formattedDate} ${formattedMonthShortName} ${formattedYear}`; // Tue 02 Mar 2021
+            return `${formattedDay} ${formattedDate} ${formattedMonthShortName} ${formattedYear}`; 
          }
          return `${formattedDay} ${formattedDate} ${formattedMonth} ${formattedYear}`;
       },
@@ -204,7 +180,7 @@ function app() {
       getDateValue(date) {
          let selectedDate = new Date(this.year, this.month, date);
          this.datepickerValue = this.formatDateForDisplay(selectedDate);
-         // this.$refs.date.value = selectedDate.getFullYear() + "-" + ('0' + formattedMonthInNumber).slice(-2) + "-" + ('0' + selectedDate.getDate()).slice(-2);
+      
          this.isSelectedDate(date);
          this.showDatepicker = false;
       },
